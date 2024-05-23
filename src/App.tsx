@@ -1,17 +1,14 @@
-import { Route, Routes } from "react-router-dom";
+import { useState } from "react";
 import "./App.css";
-import { Home } from "./commponent/Home";
-import { Team } from "./commponent/Team";
-import { History } from "./commponent/History";
 
 function App() {
+  const [state, setState] = useState(0);
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/history" element={<History />} />
-      <Route path="/team" element={<Team />} />
-
-    </Routes>
+    <div>
+      <h1>App</h1>
+      <p style={{backgroundColor: "darkcyan"}} className="mt-5 p-10">{state}</p>
+      <button className="bg-green-500 m-5 p-3" onClick={() => setState(state + 1)}>Increment</button>
+    </div>
   );
 }
 
